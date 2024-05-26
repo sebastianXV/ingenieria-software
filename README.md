@@ -48,8 +48,9 @@ Este proyecto proporciona una API RESTful para la gestión de clientes, vehícul
     - Body:
         ```json
         {
-            "nombre": "John Doe",
-            "email": "john@example.com"
+            "nombre": "Jane Doe",
+            "telefono": "3156789043"
+            "direccion" "Cr1A 3" 
         }
         ```
 
@@ -71,7 +72,8 @@ Este proyecto proporciona una API RESTful para la gestión de clientes, vehícul
         ```json
         {
             "nombre": "Jane Doe",
-            "email": "jane@example.com"
+            "telefono": "3156789043"
+            "direccion" "Cr1A 3" 
         }
         ```
 
@@ -179,6 +181,8 @@ Este proyecto proporciona una API RESTful para la gestión de clientes, vehícul
     - Body:
         ```json
         {
+            "fechaPago": "2023-06-20",
+            "cliente": "cliente_id"
             "seccion": "A",
             "tipo": "Cubierta",
             "disponibilidad": true
@@ -212,4 +216,50 @@ Este proyecto proporciona una API RESTful para la gestión de clientes, vehícul
     ```http
     DELETE /api/v1/celda/:id
     ```
+
+    #### Registros
+
+- **Crear registro**
+    ```http
+    POST /api/v1/registro
+    ```
+    - Body:
+        ```json
+        {
+          "fechaEntrada": "2023-05-19T08:00:00Z",
+          "vehiculo": "vehiculo_id",
+          "celda": "celda_id"
+        }
+        ```
+
+- **Obtener todos los registros**
+    ```http
+    GET /api/v1/registro
+    ```
+
+- **Obtener registro por ID**
+    ```http
+    GET /api/v1/celda/:id
+    ```
+
+- **Actualizar registro**
+    ```http
+    PUT /api/v1/registro/:id
+    ```
+    - Body:
+        ```json
+        {
+            "fechaEntrada": "2023-05-19T08:00:00Z",
+            "fechaSalida": "2023-05-19T18:00:00Z",
+            "vehiculo": "nuevo_vehiculo_id",
+            "celda": "nueva_celda_id"
+        }
+        ```
+
+- **Eliminar registro**
+    ```http
+    DELETE /api/v1/registro/:id
+    ```
+
+
 
